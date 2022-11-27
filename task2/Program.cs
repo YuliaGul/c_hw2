@@ -4,20 +4,25 @@
 //32679 -> 6
 Console.Write("Введите число ");
 int number = Convert.ToInt32(Console.ReadLine());
-int result = 0;
-if (number < 100)
+int numberL = number;
+int length = 0;
+while (numberL >0)
 {
-    Console.WriteLine(" Третьей цифры нет ");
+    numberL = numberL / 10;
+    length ++;
 }
-if (number >= 100)
+if (length < 3)
 {
-    if (number < 1000)
-    result  = number % 100 % 10;
-    
-    else
+  Console.WriteLine(" Третьей цифры нет ");
+}
+else
+  {
+    while (length != 3)
     {
-        result = number % 100 / 10;
+      number = number/10;
+      length --;
     }
+    number = number%10;
     Console.Write("Третья цифра этого числа ");
-    Console.WriteLine(result);
-}
+    Console.WriteLine(number);
+  }
